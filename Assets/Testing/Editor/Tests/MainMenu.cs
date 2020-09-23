@@ -12,40 +12,6 @@ namespace Tests
 {
     public class MainMenu
     {
-        // A Test behaves as an ordinary method
-        //[Test]
-        //public void MainMenuSimplePasses()
-        //{
-        //    // Use the Assert class to test conditions
-        //    //Assert.AreEqual(true, false);
-        //    //Assert.AreEqual(sceneIndex, expectedSceneIndex);
-        //    //PlayGame(null, true, true
-        //    //QuitGame();
-        //}
-
-        // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
-        // `yield return null;` to skip a frame.
-        //[UnityTest]
-        //public IEnumerator MainMenuWithEnumeratorPasses()
-        //{
-        //    // Use the Assert class to test conditions.
-        //    // Use yield to skip a frame.
-        //    //Test vaiables
-        //    string scenePath = null;
-        //    bool isSceneActive = true;
-        //    bool isSceneLoaded = true;
-        //    //Excpected variables
-        //    string expectedScenePath = "Assets/Scenes.SampleScene.unity";
-        //    bool expectedIsSceneActive = false;
-        //    bool expectedIsSceneLoaded = false;
-        //    //Assert tests
-        //    yield return null;
-        //    Assert.AreEqual(expectedScenePath, scenePath);
-        //    yield return null;
-        //    Assert.AreEqual(expectedIsSceneActive, isSceneActive);
-        //    yield return null;
-        //    Assert.AreEqual(expectedIsSceneLoaded, isSceneLoaded);
-        //}
         private bool unityConsoleActive = true;//set false to disable console messages and true to enable console messages (in unity console)
 
         //[Test] //change from bool to void and remove return value for unit testing
