@@ -23,6 +23,9 @@ namespace SimpleShooting
         void Start()
         {
             camCenter = cams.localRotation; //set rotation origin for cameras to camCenter
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+
         }
 
         void Update()
@@ -30,7 +33,7 @@ namespace SimpleShooting
             SetY();
             SetX();
 
-            updatedCursorLock();
+           // updatedCursorLock();
         }
 
         void SetY()
@@ -70,10 +73,10 @@ namespace SimpleShooting
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
 
-                if (Input.GetKeyDown(KeyCode.Escape))
-                {
-                    cursorLocked = true;
-                }
+        //        if (Input.GetKeyDown(KeyCode.Escape))
+          //      {
+            //        cursorLocked = true;
+              //  }
             }
         }
     }
