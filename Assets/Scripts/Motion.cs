@@ -1,13 +1,14 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
-using System.Collections.Specialized;
+using System.Threading;
 using UnityEngine;
 
-namespace SimpleShooting
+namespace SimpleShootingGame
 {
     public class Motion : MonoBehaviour
     {
+        #region Variables
+
         public float speed;
         public float sprintModifier;
         public float jumpForce;
@@ -18,7 +19,11 @@ namespace SimpleShooting
         private Rigidbody rig;
 
         private float baseFOV;
-        private float sprintFOVModifier = 1.5f; 
+        private float sprintFOVModifier = 1.5f;
+
+        #endregion
+
+        #region MonoBehaviour CallBack
 
         private void Start()
         {
@@ -27,18 +32,18 @@ namespace SimpleShooting
             rig = GetComponent<Rigidbody>();
         }
 
-        void FixedUpdate()
+        private void Update()
         {
-            //Input Axies
-            float t_hmove = Input.GetAxis("Horizontal");
-            float t_vmove = Input.GetAxis("Vertical");
+            //Axis
+            float t_hmove = Input.GetAxisRaw("Horizontal");
+            float t_vmove = Input.GetAxisRaw("Vertical");
 
-            //Control
+            //Controls
             bool sprint = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
             bool jump = Input.GetKeyDown(KeyCode.Space);
 
             //States
-            bool isGrounded = Physics.Raycast(groundDetector.position, Vector3.down, 0.1f, ground); ;
+            bool isGrounded = Physics.Raycast(groundDetector.position, Vector3.down, 0.1f, ground);
             bool isJumping = jump && isGrounded;
             bool isSprinting = sprint && t_vmove > 0 && !isJumping && isGrounded;
 
@@ -47,18 +52,34 @@ namespace SimpleShooting
             {
                 rig.AddForce(Vector3.up * jumpForce);
             }
+        }
+
+        void FixedUpdate()
+        {
+            //Axis
+            float t_hmove = Input.GetAxisRaw("Horizontal");
+            float t_vmove = Input.GetAxisRaw("Vertical");
+
+            //Controls
+            bool sprint = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
+            bool jump = Input.GetKeyDown(KeyCode.Space);
+
+            //States
+            bool isGrounded = Physics.Raycast(groundDetector.position, Vector3.down, 0.1f, ground);
+            bool isJumping = jump && isGrounded;
+            bool isSprinting = sprint && t_vmove > 0 && !isJumping && isGrounded;
 
             //Movement
-            Vector3 t_direction = new Vector3(t_hmove, 0, t_vmove) ;
+            Vector3 t_direction = new Vector3(t_hmove, 0, t_vmove);
             t_direction.Normalize();
 
+            
             float t_adjustedSpeed = speed;
             if (isSprinting) t_adjustedSpeed *= sprintModifier;
 
             Vector3 t_targetVelocity = transform.TransformDirection(t_direction) * t_adjustedSpeed * Time.deltaTime;
             t_targetVelocity.y = rig.velocity.y;
-            rig.velocity = t_targetVelocity;
-
+            rig.velocity = t_targetVelocity; 
 
             //Field of View
             if (isSprinting)
@@ -67,10 +88,10 @@ namespace SimpleShooting
             }
             else
             {
-                normalCam.fieldOfView = Mathf.Lerp(normalCam.fieldOfView, baseFOV, Time.deltaTime * 8f);
+                normalCam.fieldOfView = Mathf.Lerp(normalCam.fieldOfView, baseFOV, Time.deltaTime * 8f); ;
             }
         }
+        #endregion
     }
-
 }
 
