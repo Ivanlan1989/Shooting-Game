@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
-using System.Collections.Specialized;
 using UnityEngine;
 
-namespace SimpleShooting
+namespace Com.NA.Shooting
 {
     public class Motion : MonoBehaviour
     {
@@ -16,9 +14,8 @@ namespace SimpleShooting
         public LayerMask ground;
 
         private Rigidbody rig;
-
         private float baseFOV;
-        private float sprintFOVModifier = 1.5f; 
+        private float sprintFOVModifier = 1.5f;
 
         private void Start()
         {
@@ -29,18 +26,18 @@ namespace SimpleShooting
 
         void FixedUpdate()
         {
-            //Input Axies
-            float t_hmove = Input.GetAxis("Horizontal");
-            float t_vmove = Input.GetAxis("Vertical");
+            //Axles
+            float t_hmove = Input.GetAxisRaw("Horizontal");
+            float t_vmove = Input.GetAxisRaw("Vertical");
 
-            //Control
+            //Controls
             bool sprint = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
             bool jump = Input.GetKeyDown(KeyCode.Space);
 
             //States
-            bool isGrounded = Physics.Raycast(groundDetector.position, Vector3.down, 0.1f, ground); ;
+            bool isGrounded = Physics.Raycast(groundDetector.position, Vector3.down, 0.1f,ground);
             bool isJumping = jump && isGrounded;
-            bool isSprinting = sprint && t_vmove > 0 && !isJumping && isGrounded;
+            bool isSprinting = sprint && t_vmove > 0 && !isJumping && isGrounded; 
 
             //Jumping
             if (isJumping)
@@ -49,7 +46,7 @@ namespace SimpleShooting
             }
 
             //Movement
-            Vector3 t_direction = new Vector3(t_hmove, 0, t_vmove) ;
+            Vector3 t_direction = new Vector3(t_hmove,0,t_vmove);
             t_direction.Normalize();
 
             float t_adjustedSpeed = speed;
@@ -59,18 +56,9 @@ namespace SimpleShooting
             t_targetVelocity.y = rig.velocity.y;
             rig.velocity = t_targetVelocity;
 
-
             //Field of View
-            if (isSprinting)
-            {
-                normalCam.fieldOfView = Mathf.Lerp(normalCam.fieldOfView, baseFOV * sprintFOVModifier, Time.deltaTime * 8f);
-            }
-            else
-            {
-                normalCam.fieldOfView = Mathf.Lerp(normalCam.fieldOfView, baseFOV, Time.deltaTime * 8f);
-            }
+            if (isSprinting) { normalCam.fieldOfView = Mathf.Lerp(normalCam.fieldOfView, baseFOV * sprintFOVModifier, Time.deltaTime * 8f); }
+            else { normalCam.fieldOfView = Mathf.Lerp(normalCam.fieldOfView, baseFOV, Time.deltaTime * 8f); }
         }
     }
-
-}
-
+}   

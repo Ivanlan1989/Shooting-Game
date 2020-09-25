@@ -1,28 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.Security.Cryptography;
-using System.Threading;
 using UnityEngine;
 
-namespace SimpleShooting
+namespace Com.NA.Shooting
 {
     public class Look : MonoBehaviour
+
     {
         public static bool cursorLocked = true;
 
         public Transform player;
         public Transform cams;
+        public Transform weapon;
 
         public float xSensitivity;
         public float ySensitivity;
         public float maxAngle;
 
         private Quaternion camCenter;
-
+         
         void Start()
         {
-            camCenter = cams.localRotation; //set rotation origin for cameras to camCenter
+            camCenter = cams.localRotation;
         }
 
         void Update()
@@ -30,9 +29,8 @@ namespace SimpleShooting
             SetY();
             SetX();
 
-            updatedCursorLock();
+            UpdateCursorLock();
         }
-
         void SetY()
         {
             float t_input = Input.GetAxis("Mouse Y") * ySensitivity * Time.deltaTime;
@@ -43,24 +41,24 @@ namespace SimpleShooting
             {
                 cams.localRotation = t_delta;
             }
+            weapon.rotation = cams.rotation;
         }
-
         void SetX()
-        {
-            float t_input = Input.GetAxis("Mouse X") * xSensitivity * Time.deltaTime;
-            Quaternion t_adj = Quaternion.AngleAxis(t_input, Vector3.up);
-            Quaternion t_delta = player.localRotation * t_adj;
-            player.localRotation = t_delta;
-        }
+            {
+                float t_input = Input.GetAxis("Mouse X") * xSensitivity * Time.deltaTime;
+                Quaternion t_adj = Quaternion.AngleAxis(t_input, Vector3.up);
+                Quaternion t_delta = player.localRotation * t_adj;
+                player.localRotation = t_delta;              
+            }
 
-        void updatedCursorLock()
+        void UpdateCursorLock()
         {
-            if(cursorLocked)
+            if (cursorLocked)
             {
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
 
-                if (Input.GetKeyDown(KeyCode.Escape))
+                if(Input.GetKeyDown(KeyCode.Escape))
                 {
                     cursorLocked = false;
                 }
@@ -75,7 +73,7 @@ namespace SimpleShooting
                     cursorLocked = true;
                 }
             }
+
         }
     }
-
 }
