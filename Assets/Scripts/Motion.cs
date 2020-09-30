@@ -8,19 +8,21 @@ namespace SimpleShootingGame
     public class Motion : MonoBehaviour
     {
         #region Variables
-
+        #region Public
         public float speed;
         public float sprintModifier;
         public float jumpForce;
         public Camera normalCam;
         public Transform groundDetector;
         public LayerMask ground;
-
+        public GameObject crossHairWalking;
+        public GameObject crossHairRunning;
+        #endregion
+        #region Private
         private Rigidbody rig;
-
         private float baseFOV;
         private float sprintFOVModifier = 1.5f;
-
+        #endregion
         #endregion
 
         #region MonoBehaviour CallBack
@@ -85,10 +87,20 @@ namespace SimpleShootingGame
             if (isSprinting)
             {
                 normalCam.fieldOfView = Mathf.Lerp(normalCam.fieldOfView, baseFOV * sprintFOVModifier, Time.deltaTime * 8f);
+                if (!crossHairRunning.activeInHierarchy)
+                {
+                    crossHairWalking.SetActive(false);
+                    crossHairRunning.SetActive(true);
+                }
             }
             else
             {
-                normalCam.fieldOfView = Mathf.Lerp(normalCam.fieldOfView, baseFOV, Time.deltaTime * 8f); ;
+                normalCam.fieldOfView = Mathf.Lerp(normalCam.fieldOfView, baseFOV, Time.deltaTime * 8f);
+                if (!crossHairWalking.activeInHierarchy)
+                {
+                    crossHairRunning.SetActive(false);
+                    crossHairWalking.SetActive(true);
+                }
             }
         }
         #endregion
