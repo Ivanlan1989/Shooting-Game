@@ -1,11 +1,16 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class StageComplete : MonoBehaviour
 {
     #region Variables
     #region Public
     public GameObject player;
-    public string message;
+    public string stageCompletedMessage;
+    public Text stageCompletedText;
+    public GameObject stageCompletedGO;
+    public float stageCompletedMessageDuration = 4f;
     #endregion
     #region Private
     private bool isStageComplete;
@@ -18,10 +23,19 @@ public class StageComplete : MonoBehaviour
         {
             if (!isStageComplete)
             {
-                Debug.Log(message);
+                StartCoroutine(StageCompletedUIMessage());
                 isStageComplete = true;
             }
         }
+    }
+
+    private IEnumerator StageCompletedUIMessage()
+    {
+        Debug.Log(stageCompletedMessage);
+        stageCompletedText.text = stageCompletedMessage;
+        stageCompletedGO.SetActive(true);
+        yield return new WaitForSeconds(stageCompletedMessageDuration);
+        stageCompletedGO.SetActive(false);
     }
     #endregion
 
