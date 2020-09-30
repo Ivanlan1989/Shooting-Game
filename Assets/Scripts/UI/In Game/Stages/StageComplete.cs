@@ -29,9 +29,47 @@ public class StageComplete : MonoBehaviour
         }
     }
 
+    private Text FindMissingTextObject(string textObjectName)
+    {
+        Text[] tmpGOS = FindObjectsOfType<Text>();
+        Text tmpFoundText = null;
+        foreach (Text tmpTextObject in tmpGOS)
+        {
+            if (tmpTextObject.name == textObjectName)
+            {
+                tmpFoundText = tmpTextObject;   
+                break;
+            }
+        }
+        return tmpFoundText;
+    }
+
+    private GameObject FindMissingGameObject(string gameObjectName)
+    {
+        GameObject[] tmpGOS = FindObjectsOfType<GameObject>();
+        GameObject tmpFoundGO = null;
+        foreach (GameObject tmpGO in tmpGOS)
+        {
+            if (tmpGO.name == gameObjectName)
+            {
+                tmpFoundGO = tmpGO;
+                break;
+            }
+        }
+        return null;
+    }
+
     private IEnumerator StageCompletedUIMessage()
     {
         Debug.Log(stageCompletedMessage);
+        if (stageCompletedText == null)
+        {
+            stageCompletedText = FindMissingTextObject("Stage Completed");
+        }
+        if (stageCompletedText == null)
+        {
+            stageCompletedGO = FindMissingGameObject("Stage Completed");
+        }
         stageCompletedText.text = stageCompletedMessage;
         stageCompletedGO.SetActive(true);
         yield return new WaitForSeconds(stageCompletedMessageDuration);
