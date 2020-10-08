@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,6 +13,7 @@ public class FinalStageComplete : MonoBehaviour
     public GameObject stageCompletedGO;
     public float stageCompletedMessageDuration = 4f;
     public GameObject levelLoader;
+    public int nextScene;
     #endregion
     #region Private
     private bool isStageComplete;
@@ -80,8 +82,14 @@ public class FinalStageComplete : MonoBehaviour
 
     private void LoadNextLevel()
     {
-        LevelLoader tmpLevelLoader = levelLoader.GetComponent<LevelLoader>();
-        
+        try
+        {
+            levelLoader.GetComponent<LevelLoader>().LoadLevel(nextScene);
+        }
+        catch(Exception ex)
+        {
+            Debug.LogError("Error " + ex.Message + "\n" + ex.StackTrace);
+        }
     }
     #endregion
 
