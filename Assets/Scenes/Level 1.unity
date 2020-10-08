@@ -713,7 +713,7 @@ Terrain:
   m_DrawInstanced: 0
   m_DrawTreesAndFoliage: 1
   m_ReflectionProbeUsage: 1
-  m_MaterialTemplate: {fileID: 10652, guid: 0000000000000000f000000000000000, type: 0}
+  m_MaterialTemplate: {fileID: 2100000, guid: 05d1c571cd0d4fd4b9c3d22592437c21, type: 2}
   m_BakeLightProbesForTrees: 1
   m_PreserveTreePrototypeLayers: 0
   m_DeringLightProbesForTrees: 1
@@ -1334,7 +1334,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1985495881
 Transform:
   m_ObjectHideFlags: 0
@@ -1596,17 +1596,17 @@ PrefabInstance:
     - target: {fileID: 3600839727599903115, guid: a0b59f640a1faa142a0e941e822293b9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 126.44
       objectReference: {fileID: 0}
     - target: {fileID: 3600839727599903115, guid: a0b59f640a1faa142a0e941e822293b9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 11.57
       objectReference: {fileID: 0}
     - target: {fileID: 3600839727599903115, guid: a0b59f640a1faa142a0e941e822293b9,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 115.34
       objectReference: {fileID: 0}
     - target: {fileID: 3600839727599903115, guid: a0b59f640a1faa142a0e941e822293b9,
         type: 3}
@@ -1616,17 +1616,17 @@ PrefabInstance:
     - target: {fileID: 3600839727599903115, guid: a0b59f640a1faa142a0e941e822293b9,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3600839727599903115, guid: a0b59f640a1faa142a0e941e822293b9,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3600839727599903115, guid: a0b59f640a1faa142a0e941e822293b9,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3600839727599903115, guid: a0b59f640a1faa142a0e941e822293b9,
         type: 3}
@@ -1641,7 +1641,7 @@ PrefabInstance:
     - target: {fileID: 3600839727599903115, guid: a0b59f640a1faa142a0e941e822293b9,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 3600839727599903115, guid: a0b59f640a1faa142a0e941e822293b9,
         type: 3}
