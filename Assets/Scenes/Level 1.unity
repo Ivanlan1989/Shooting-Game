@@ -1109,6 +1109,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5aad8e2159da2f748a98cd2e5ace5022, type: 3}
+--- !u!1 &1893173437 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7812436711598909257, guid: 5aad8e2159da2f748a98cd2e5ace5022,
+    type: 3}
+  m_PrefabInstance: {fileID: 1893173436}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1953452630
 GameObject:
   m_ObjectHideFlags: 0
@@ -1189,7 +1195,9 @@ MonoBehaviour:
   stageCompletedText: {fileID: 1237759855}
   stageCompletedGO: {fileID: 1237759853}
   stageCompletedMessageDuration: 4
+  loadingScreen: {fileID: 1893173437}
   levelLoader: {fileID: 1857617603}
+  nextScene: 3
 --- !u!65 &1974437345
 BoxCollider:
   m_ObjectHideFlags: 0

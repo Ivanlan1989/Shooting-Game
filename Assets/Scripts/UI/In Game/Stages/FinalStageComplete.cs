@@ -12,6 +12,7 @@ public class FinalStageComplete : MonoBehaviour
     public Text stageCompletedText;
     public GameObject stageCompletedGO;
     public float stageCompletedMessageDuration = 4f;
+    public GameObject loadingScreen;
     public GameObject levelLoader;
     public int nextScene;
     #endregion
@@ -84,6 +85,7 @@ public class FinalStageComplete : MonoBehaviour
     {
         try
         {
+            loadingScreen.SetActive(true);
             levelLoader.GetComponent<LevelLoader>().LoadLevel(nextScene);
         }
         catch(Exception ex)
