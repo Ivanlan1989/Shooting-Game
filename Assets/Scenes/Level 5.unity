@@ -2085,7 +2085,7 @@ MonoBehaviour:
   stageCompletedMessageDuration: 4
   loadingScreen: {fileID: 686654448}
   levelLoader: {fileID: 1608594802}
-  nextScene: 6
+  nextScene: 0
 --- !u!65 &1974437345
 BoxCollider:
   m_ObjectHideFlags: 0
