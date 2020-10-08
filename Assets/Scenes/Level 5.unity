@@ -2685,7 +2685,7 @@ GameObject:
   - component: {fileID: 1974437345}
   - component: {fileID: 1974437344}
   m_Layer: 0
-  m_Name: Stage 2
+  m_Name: Last Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2724,7 +2724,7 @@ MonoBehaviour:
   stageCompletedMessageDuration: 4
   loadingScreen: {fileID: 686654448}
   levelLoader: {fileID: 1608594802}
-  nextScene: 0
+  nextScene: 7
 --- !u!65 &1974437345
 BoxCollider:
   m_ObjectHideFlags: 0

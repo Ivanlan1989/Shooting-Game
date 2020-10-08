@@ -767,7 +767,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 612363772}
-  stageCompletedMessage: Level 1 Completed
+  stageCompletedMessage: Out of bounds
   stageCompletedText: {fileID: 1237759855}
   stageCompletedGO: {fileID: 1237759853}
   stageCompletedMessageDuration: 4
