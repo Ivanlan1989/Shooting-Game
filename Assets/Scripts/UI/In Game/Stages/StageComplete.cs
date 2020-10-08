@@ -1,7 +1,11 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-
+/*
+ * Written by Robert Ankersmit
+ * Used the Unity tutorial on youtube to get an understanding of box colliders, however this is all my own code.
+ * References: Unity Box collider trigger tutorial (URL: )
+*/
 public class StageComplete : MonoBehaviour
 {
     #region Variables

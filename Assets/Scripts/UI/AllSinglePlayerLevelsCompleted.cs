@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
-
+/*
+ * Written by Robert Ankersmit
+*/
 public class AllSinglePlayerLevelsCompleted : MonoBehaviour
 {
 	#region Variables

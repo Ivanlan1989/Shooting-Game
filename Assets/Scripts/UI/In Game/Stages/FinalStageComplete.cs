@@ -2,7 +2,14 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-
+/*
+ * Written by Robert Ankersmit
+ * This is adaptation of my StageComplete script, however this one is built for a final stage being completed and then loading the desired level.
+ * I did use some concepts from the Brackeys Level Loader tutorial, however have pretty much changed everything completely.
+ * I simply used the tutorial to get an understanding of how to load a level with a loading bar.
+ * Used the Unity tutorial on youtube to get an understanding of box colliders, however this is all my own code.
+ * References: Unity Box collider trigger tutorial (URL: ), Brackeys Level Loader tutorial (URL: )
+*/
 public class FinalStageComplete : MonoBehaviour
 {
     #region Variables
