@@ -506,7 +506,11 @@ PrefabInstance:
     - target: {fileID: 8334390267670160496, guid: 67bdbffe8235509488204e632cc28996,
         type: 3}
       propertyPath: m_IsActive
+<<<<<<< HEAD
       value: 0
+=======
+      value: 1
+>>>>>>> b4b9ae3276c4e915d1d38822ea3ea1a72fdeeea4
       objectReference: {fileID: 0}
     - target: {fileID: 8334390267670160503, guid: 67bdbffe8235509488204e632cc28996,
         type: 3}
@@ -583,6 +587,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pistol 2
       objectReference: {fileID: 0}
+<<<<<<< HEAD
+=======
+    - target: {fileID: 8188114582029261062, guid: ff1bcbbe78b015a478a0a4d11639b189,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+>>>>>>> b4b9ae3276c4e915d1d38822ea3ea1a72fdeeea4
     - target: {fileID: 8856845956989879228, guid: ff1bcbbe78b015a478a0a4d11639b189,
         type: 3}
       propertyPath: m_LocalPosition.x

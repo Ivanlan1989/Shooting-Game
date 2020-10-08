@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 ﻿using System.Collections;
+=======
+﻿using System;
+using System.Collections;
+>>>>>>> b4b9ae3276c4e915d1d38822ea3ea1a72fdeeea4
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,7 +16,13 @@ public class FinalStageComplete : MonoBehaviour
     public Text stageCompletedText;
     public GameObject stageCompletedGO;
     public float stageCompletedMessageDuration = 4f;
+<<<<<<< HEAD
     public GameObject levelLoader;
+=======
+    public GameObject loadingScreen;
+    public GameObject levelLoader;
+    public int nextScene;
+>>>>>>> b4b9ae3276c4e915d1d38822ea3ea1a72fdeeea4
     #endregion
     #region Private
     private bool isStageComplete;
@@ -80,8 +91,20 @@ public class FinalStageComplete : MonoBehaviour
 
     private void LoadNextLevel()
     {
+<<<<<<< HEAD
         LevelLoader tmpLevelLoader = levelLoader.GetComponent<LevelLoader>();
         
+=======
+        try
+        {
+            loadingScreen.SetActive(true);
+            levelLoader.GetComponent<LevelLoader>().LoadLevel(nextScene);
+        }
+        catch(Exception ex)
+        {
+            Debug.LogError("Error " + ex.Message + "\n" + ex.StackTrace);
+        }
+>>>>>>> b4b9ae3276c4e915d1d38822ea3ea1a72fdeeea4
     }
     #endregion
 
