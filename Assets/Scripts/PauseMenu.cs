@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 /*
  * Videos: Brackey's Unity Beginner tutorials 1-10
  * Author: Brackeys (Youtube)
@@ -16,10 +17,26 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
 
+    public Slider volumeSlider;
+    public Toggle[] resolutionToggles;
+    public int[] screenRes;
+    int ScreenIndex;
+
     public static bool GamePaused = false;
     public GameObject pauseMenuUI;
+    public GameObject OptionsMenuHolder;
+
+    public void Start()
+    {
+        ScreenIndex = PlayerPrefs.GetInt("screen res index");
+        bool isFull = (PlayerPrefs.GetInt("fullscreen")) == 1;
+       // volumeSlider.value = AudioManager.instance.
+    }
+
 
     // Update is called once per frame
+
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -62,6 +79,53 @@ public class PauseMenu : MonoBehaviour
 
     public void OptionsButton()
     {
-        Application.Quit();
+        pauseMenuUI.SetActive(false);
+        Time.timeScale = 0f;
+        OptionsMenuHolder.SetActive(true);
+    }
+
+
+    public void back()
+    {
+        OptionsMenuHolder.SetActive(false);
+        pauseMenuUI.SetActive(true);
+    }
+
+    public void SetScreenResolution(int res)
+    {
+        if(resolutionToggles[res].isOn)
+        {
+            ScreenIndex = res;
+            float aspectRatio = 16 / 9f;
+            Screen.SetResolution(screenRes[res], (int)(screenRes[res] / aspectRatio), false);
+            PlayerPrefs.SetInt("screen res index", ScreenIndex);
+        }
+    }
+
+    public void SetFullScreen(bool isFull)
+    {
+        for(int i =0; i < resolutionToggles.Length; i++)
+        {
+            resolutionToggles[i].interactable = !isFull;
+        }
+
+        if(isFull)
+        {
+            Resolution[] allRes = Screen.resolutions;
+            Resolution max = allRes[allRes.Length - 1];
+            Screen.SetResolution(max.width, max.height, true);
+        }
+        else
+        {
+            SetScreenResolution(ScreenIndex);
+        }
+
+        PlayerPrefs.SetInt("fullscreen", ((isFull) ? 1 : 0));
+        PlayerPrefs.Save();
+    }
+
+    public void SetMasterVolume(float vol)
+    {
+        AudioManager.instance.SetVolume(vol);
     }
 }
