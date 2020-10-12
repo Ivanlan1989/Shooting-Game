@@ -4,6 +4,7 @@
  * I did base this in part on the Brackeys Billboard from the Health Bar tutorial, however I completely reworked the billboard to suit my own needs.
  * For example if the cammera cannot be found -> then my script will look for the camera and set the camera to the found camera.
  * This makes my billboard quite good, if for instance you forget to assign the camera then the scrip will be able to adapt and there will be no problems.
+ * Brackeys URL: https://www.youtube.com/watch?v=BLfNP4Sc_iA
 */
 public class Billboard : MonoBehaviour
 {
