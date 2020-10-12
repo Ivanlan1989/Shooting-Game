@@ -1511,7 +1511,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 76d981a5090ef7948a4450465655205c, type: 2}
+  - {fileID: 2140474, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2003,7 +2003,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 672b8e4a5edf88b47b93c125ebd2b158, type: 2}
+  - {fileID: 2140474, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3710,7 +3710,7 @@ MonoBehaviour:
   stageCompletedMessageDuration: 4
   loadingScreen: {fileID: 1294558664}
   levelLoader: {fileID: 1624104629}
-  nextScene: 6
+  nextScene: 10
 --- !u!65 &1974437345
 BoxCollider:
   m_ObjectHideFlags: 0
