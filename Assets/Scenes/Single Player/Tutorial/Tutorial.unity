@@ -26006,12 +26006,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 640369809}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &645810143 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8866066827142563826, guid: a9bfc27d0f3c43241b14c5786ec6576d,
-    type: 3}
-  m_PrefabInstance: {fileID: 1163552914}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &647946517
 GameObject:
   m_ObjectHideFlags: 0
@@ -29803,21 +29797,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 622388471770510308, guid: a9bfc27d0f3c43241b14c5786ec6576d,
-        type: 3}
-      propertyPath: crossHairWalking
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 622388471770510308, guid: a9bfc27d0f3c43241b14c5786ec6576d,
-        type: 3}
-      propertyPath: crossHairRunning
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 622388471770510309, guid: a9bfc27d0f3c43241b14c5786ec6576d,
-        type: 3}
-      propertyPath: currentWeapon
-      value: 
-      objectReference: {fileID: 645810143}
     - target: {fileID: 622388471770510311, guid: a9bfc27d0f3c43241b14c5786ec6576d,
         type: 3}
       propertyPath: m_LocalPosition.x

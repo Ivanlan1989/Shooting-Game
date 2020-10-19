@@ -490,7 +490,7 @@ MonoBehaviour:
   loadout:
   - {fileID: 0}
   weaponParent: {fileID: 622388470135103175}
-  currentWeapon: {fileID: 0}
+  currentWeapon: {fileID: 8866066827142563826}
 --- !u!1001 &622388471587595138
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -565,6 +565,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67bdbffe8235509488204e632cc28996, type: 3}
+--- !u!1 &8866066827142563826 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8334390267670160496, guid: 67bdbffe8235509488204e632cc28996,
+    type: 3}
+  m_PrefabInstance: {fileID: 622388471587595138}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8866066827142563829 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8334390267670160503, guid: 67bdbffe8235509488204e632cc28996,
