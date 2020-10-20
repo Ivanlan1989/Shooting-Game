@@ -1983,8 +1983,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1990831479}
   stageCompletedMessage: Press the shift key to sprint
-  stageCompletedText: {fileID: 0}
-  stageCompletedGO: {fileID: 0}
+  stageCompletedText: {fileID: 5215603736013072214}
+  stageCompletedGO: {fileID: 5215603736013072213}
   stageCompletedMessageDuration: 4
 --- !u!65 &238011446
 BoxCollider:
@@ -2164,8 +2164,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1990831479}
   stageCompletedMessage: Stage 2 Completed
-  stageCompletedText: {fileID: 0}
-  stageCompletedGO: {fileID: 0}
+  stageCompletedText: {fileID: 5215603736013072214}
+  stageCompletedGO: {fileID: 5215603736013072213}
   stageCompletedMessageDuration: 4
 --- !u!65 &254835234
 BoxCollider:
@@ -3030,8 +3030,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1990831479}
   stageCompletedMessage: Stage 1 Completed
-  stageCompletedText: {fileID: 0}
-  stageCompletedGO: {fileID: 0}
+  stageCompletedText: {fileID: 5215603736013072214}
+  stageCompletedGO: {fileID: 5215603736013072213}
   stageCompletedMessageDuration: 4
 --- !u!1 &402366088
 GameObject:
@@ -25275,12 +25275,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1990831479}
   stageCompletedMessage: Tutorial Completed
-  stageCompletedText: {fileID: 0}
-  stageCompletedGO: {fileID: 0}
+  stageCompletedText: {fileID: 5215603736013072214}
+  stageCompletedGO: {fileID: 5215603736013072213}
   stageCompletedMessageDuration: 4
   loadingScreen: {fileID: 68353321}
   levelLoader: {fileID: 1293778708}
-  nextScene: 2
+  nextScene: Level 1
 --- !u!65 &602514618
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28555,8 +28555,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1990831479}
   stageCompletedMessage: Left click to shoot targets
-  stageCompletedText: {fileID: 0}
-  stageCompletedGO: {fileID: 0}
+  stageCompletedText: {fileID: 5215603736013072214}
+  stageCompletedGO: {fileID: 5215603736013072213}
   stageCompletedMessageDuration: 4
 --- !u!65 &1045193543
 BoxCollider:
@@ -29690,8 +29690,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1990831479}
   stageCompletedMessage: Press the space bar to jump
-  stageCompletedText: {fileID: 0}
-  stageCompletedGO: {fileID: 0}
+  stageCompletedText: {fileID: 5215603736013072214}
+  stageCompletedGO: {fileID: 5215603736013072213}
   stageCompletedMessageDuration: 4
 --- !u!65 &1123536229
 BoxCollider:
@@ -29797,6 +29797,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 622388471770510308, guid: a9bfc27d0f3c43241b14c5786ec6576d,
+        type: 3}
+      propertyPath: crossHairWalking
+      value: 
+      objectReference: {fileID: 1562974704}
+    - target: {fileID: 622388471770510308, guid: a9bfc27d0f3c43241b14c5786ec6576d,
+        type: 3}
+      propertyPath: crossHairRunning
+      value: 
+      objectReference: {fileID: 1982323235}
     - target: {fileID: 622388471770510311, guid: a9bfc27d0f3c43241b14c5786ec6576d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -30295,8 +30305,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1990831479}
   stageCompletedMessage: Stage 3 Completed
-  stageCompletedText: {fileID: 0}
-  stageCompletedGO: {fileID: 0}
+  stageCompletedText: {fileID: 5215603736013072214}
+  stageCompletedGO: {fileID: 5215603736013072213}
   stageCompletedMessageDuration: 4
 --- !u!65 &1219193390
 BoxCollider:
@@ -32712,6 +32722,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1561197021}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1562974704 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6101351049568576798, guid: 443ff12abcd5ed04981c77f216201be2,
+    type: 3}
+  m_PrefabInstance: {fileID: 5215603736013072212}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1565629479
 GameObject:
   m_ObjectHideFlags: 0
@@ -36285,6 +36301,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1979490140}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1982323235 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6101351051345087120, guid: 443ff12abcd5ed04981c77f216201be2,
+    type: 3}
+  m_PrefabInstance: {fileID: 5215603736013072212}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1990831479 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 622388471770509339, guid: a9bfc27d0f3c43241b14c5786ec6576d,
@@ -37271,3 +37293,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 443ff12abcd5ed04981c77f216201be2, type: 3}
+--- !u!1 &5215603736013072213 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6101351049500583045, guid: 443ff12abcd5ed04981c77f216201be2,
+    type: 3}
+  m_PrefabInstance: {fileID: 5215603736013072212}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5215603736013072214 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6101351049500583047, guid: 443ff12abcd5ed04981c77f216201be2,
+    type: 3}
+  m_PrefabInstance: {fileID: 5215603736013072212}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5215603736013072213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -649,7 +649,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadingScreen: {fileID: 467324841}
   levelLoader: {fileID: 787603258}
-  nextScene: 0
+  nextScene: MainMenu
   delay: 6
   resetMouse: {fileID: 1339377005}
 --- !u!4 &1339377004
@@ -678,6 +678,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0d0dd235dd85c34c904ac1f3168039b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onStart: 0
 --- !u!1 &1379744945
 GameObject:
   m_ObjectHideFlags: 0

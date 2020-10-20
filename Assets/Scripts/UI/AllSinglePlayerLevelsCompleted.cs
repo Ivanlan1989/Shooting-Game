@@ -10,7 +10,7 @@ public class AllSinglePlayerLevelsCompleted : MonoBehaviour
 	#region Public Variables
 	public GameObject loadingScreen;
 	public GameObject levelLoader;
-	public int nextScene;
+	public string nextScene;
 	public float delay = 6f;
 	public ResetMouseAndCursor resetMouse;
 	#endregion

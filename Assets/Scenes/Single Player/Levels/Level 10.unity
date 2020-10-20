@@ -4322,7 +4322,7 @@ MonoBehaviour:
   stageCompletedMessageDuration: 4
   loadingScreen: {fileID: 686654448}
   levelLoader: {fileID: 1608594802}
-  nextScene: 12
+  nextScene: All Single Player Levels Completed
 --- !u!65 &1974437345
 BoxCollider:
   m_ObjectHideFlags: 0

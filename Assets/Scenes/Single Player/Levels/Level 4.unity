@@ -1545,6 +1545,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 622388471168900584}
+  cameraName: Normal Camera
 --- !u!1 &1003985272 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6101351051345087120, guid: 443ff12abcd5ed04981c77f216201be2,
@@ -3405,7 +3406,7 @@ MonoBehaviour:
   stageCompletedMessageDuration: 4
   loadingScreen: {fileID: 1294558664}
   levelLoader: {fileID: 1624104629}
-  nextScene: 6
+  nextScene: Level 5
 --- !u!65 &1974437345
 BoxCollider:
   m_ObjectHideFlags: 0

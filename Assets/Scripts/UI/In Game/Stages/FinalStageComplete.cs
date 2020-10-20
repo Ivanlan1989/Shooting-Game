@@ -21,7 +21,7 @@ public class FinalStageComplete : MonoBehaviour
     public float stageCompletedMessageDuration = 4f;
     public GameObject loadingScreen;
     public GameObject levelLoader;
-    public int nextScene;
+    public string nextScene;
     #endregion
     #region Private
     private bool isStageComplete;
