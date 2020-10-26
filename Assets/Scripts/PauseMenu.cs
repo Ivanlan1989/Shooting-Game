@@ -23,6 +23,7 @@ public class PauseMenu : MonoBehaviour
     int ScreenIndex;
 
     public static bool GamePaused = false;
+    public static bool OptionsOn = false;
     public GameObject pauseMenuUI;
     public GameObject OptionsMenuHolder;
 
@@ -30,6 +31,7 @@ public class PauseMenu : MonoBehaviour
     {
         ScreenIndex = PlayerPrefs.GetInt("screen res index");
         bool isFull = (PlayerPrefs.GetInt("fullscreen")) == 1;
+        this.SetMasterVolume(AudioManager.instance.getVolume());
        // volumeSlider.value = AudioManager.instance.
     }
 
@@ -39,15 +41,18 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (GamePaused)
+        if (!OptionsOn)
+        { 
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                Resume(); //when the escape key is hit it can auto resume or pause
-            }
-            else
-            {
-                Pause();
+                if (GamePaused)
+                {
+                    Resume(); //when the escape key is hit it can auto resume or pause
+                }
+                else
+                {
+                    Pause();
+                }
             }
         }
     }
@@ -80,6 +85,7 @@ public class PauseMenu : MonoBehaviour
     public void OptionsButton()
     {
         pauseMenuUI.SetActive(false);
+        OptionsOn = true;
         Time.timeScale = 0f;
         OptionsMenuHolder.SetActive(true);
     }
@@ -89,6 +95,7 @@ public class PauseMenu : MonoBehaviour
     {
         OptionsMenuHolder.SetActive(false);
         pauseMenuUI.SetActive(true);
+        OptionsOn = false;
     }
 
     public void SetScreenResolution(int res)

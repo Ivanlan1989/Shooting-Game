@@ -50,8 +50,15 @@ public class AudioManager : MonoBehaviour
 
     public void SetVolume(float vol)
     {
-        AudioSource sound = GetComponent<AudioSource>();
+        AudioSource sound = GetComponent<AudioSource>();//sets the volume of the audio manager
         sound.volume = vol;
+    }
+
+    public float getVolume()
+    {
+        AudioSource sound = GetComponent<AudioSource>();//for the pause menu we need intial volume as well as current volume
+        float volume = sound.volume;
+        return volume;
     }
 	
 	public void Stop(string name)
