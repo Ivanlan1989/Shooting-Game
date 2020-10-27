@@ -10,13 +10,13 @@ This game that you have to download the whole documents.
 
 This is a first person design game. The aim is to keep coming on a plain. All you have to do is kill them with your gun. This game has teaching levels and other different levels. Different levels, the accuracy of the enemy and the amount of blood will be different. Eliminating an enemy will increase your score. Ammunition, medical kits and different weapons will be refreshed on the ground for players to use. This game also can carry on two person online to fight.
 
-#Contributing
+# Contributing
 
 Ivan, Robert, Sans, Ning, Arnold
 
-#License
+# License
 -
 
-#Contact details
+# Contact details
 
 jqh6496@autuni.onmicrosoft.com
