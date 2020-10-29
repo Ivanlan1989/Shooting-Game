@@ -27,12 +27,20 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenuUI;
     public GameObject OptionsMenuHolder;
 
-    public void Start()
+    public void start()
     {
-        ScreenIndex = PlayerPrefs.GetInt("screen res index");
+       
+        ScreenIndex = PlayerPrefs.GetInt("screen index");
         bool isFull = (PlayerPrefs.GetInt("fullscreen")) == 1;
-        this.SetMasterVolume(AudioManager.instance.getVolume());
-       // volumeSlider.value = AudioManager.instance.
+        volumeSlider.value = AudioManager.instance.getVolume();//passes the audio managers current volume
+        
+
+        for (int i = 0; i < resolutionToggles.Length; i++)
+        {
+            resolutionToggles[i].isOn = i == ScreenIndex;
+        }
+
+        SetFullScreen(isFull);// the player prefs aim to store the current settings
     }
 
 
@@ -41,7 +49,7 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
-        if (!OptionsOn)
+        if (!OptionsOn && Input.GetKeyDown(KeyCode.Escape))
         { 
             if (Input.GetKeyDown(KeyCode.Escape))
             {
@@ -54,6 +62,10 @@ public class PauseMenu : MonoBehaviour
                     Pause();
                 }
             }
+        }
+        else if(Input.GetKeyDown(KeyCode.Escape) && OptionsOn)
+        {
+            this.back();
         }
     }
 
@@ -103,9 +115,9 @@ public class PauseMenu : MonoBehaviour
         if(resolutionToggles[res].isOn)
         {
             ScreenIndex = res;
-            float aspectRatio = 16 / 9f;
+            float aspectRatio = 16 / 9f;// calculate y is dividing the aspect ratio
             Screen.SetResolution(screenRes[res], (int)(screenRes[res] / aspectRatio), false);
-            PlayerPrefs.SetInt("screen res index", ScreenIndex);
+            PlayerPrefs.SetInt("screen index", ScreenIndex);
         }
     }
 
@@ -128,11 +140,12 @@ public class PauseMenu : MonoBehaviour
         }
 
         PlayerPrefs.SetInt("fullscreen", ((isFull) ? 1 : 0));
-        PlayerPrefs.Save();
+        PlayerPrefs.Save();//stores if it was in fullscreen
     }
 
     public void SetMasterVolume(float vol)
     {
-        AudioManager.instance.SetVolume(vol);
+         AudioManager.instance.SetVolume(vol);
+
     }
 }

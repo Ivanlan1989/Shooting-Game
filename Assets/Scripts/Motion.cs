@@ -36,6 +36,7 @@ namespace SimpleShootingGame
 
         private void Update()
         {
+
             //Axis
             float t_hmove = Input.GetAxisRaw("Horizontal");
             float t_vmove = Input.GetAxisRaw("Vertical");
