@@ -27,14 +27,14 @@ namespace SimpleShootingGame
         void Start()
         {
             camCenter = cams.localRotation; //set rotation origin for cameras to camCenter
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
         }
 
         void Update()
         {
             SetY();
             SetX();
+
+            UpdateCursorLock();
         }
         #endregion
 
@@ -59,6 +59,30 @@ namespace SimpleShootingGame
             Quaternion t_adj = Quaternion.AngleAxis(t_input, Vector3.up);
             Quaternion t_delta = player.localRotation * t_adj;
             player.localRotation = t_delta;
+        }
+
+        void UpdateCursorLock()
+        {
+            if (cursorLocked)
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+
+                if (Input.GetKeyDown(KeyCode.Escape))
+                {
+                    cursorLocked = false;
+                }
+            }
+            else
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+
+                if (Input.GetKeyDown(KeyCode.Escape))
+                {
+                    cursorLocked = true;
+                }
+            }
         }
         #endregion
 
